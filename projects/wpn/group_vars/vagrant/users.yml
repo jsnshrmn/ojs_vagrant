@@ -1,0 +1,4 @@
+users:
+  - name: '{{my_user}}'
+    groups: 'wheel'
+    pubkey: '{{ my_pubkey }}'

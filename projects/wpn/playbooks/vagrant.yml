@@ -1,0 +1,35 @@
+---
+- hosts: vagrant
+  sudo: yes
+  roles:
+    - role: OULibraries.centos7
+      tags: centos7
+  pre_tasks:
+    - include: pretasks.yml
+      tags: pretasks
+
+- hosts: wpn.vagrant.localdomain
+  sudo: yes
+  roles:
+    - role: OULibraries.mariadb
+      tags: mariadb
+    - role: OULibraries.apache2
+      tags: apache2
+    - role: jsnshrmn.wpn
+      tags: wpn
+    - role: OULibraries.ngrok
+      tags: ngrok
+
+  pre_tasks:
+    - name: /srv is a directory
+      file: path=/srv state=directory mode=0755 force=yes
+    - name: Check preconditions for running playbook.
+      assert:
+        that:
+          - mariadb_root_pass is defined
+
+# Got back and configure interactive users and devel settings
+- hosts: vagrant
+  roles:
+    - role: OULibraries.users
+      tags: users

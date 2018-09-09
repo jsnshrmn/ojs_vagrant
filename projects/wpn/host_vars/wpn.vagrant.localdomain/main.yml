@@ -1,0 +1,31 @@
+---
+
+# Passing the local domain on to apache
+httpd_dn_suffix: "wpn.{{ my_httpd_dn_suffix }}"
+
+# root db password
+mariadb_root_pass: 'root'
+
+# Email config
+smtp_host: !!null
+smtp_port: !!null
+smtp_domain: !!null
+smtp_start_tls: "YES"
+smtp_from_line_override: "YES"
+smtp_authuser: "{{my_smtp_authuser }}"
+smtp_authpassword: "{{ my_smtp_authpassword }}"
+sendmail_users:
+  - apache
+  - root
+
+# Your ngrok token
+ngrok_authtoken: "{{my_ngrok_authtoken }}"
+
+# Configuration for tunnels.
+# Note that because proto == tls, traffic is encrypted end-to-end, rather than cleartext. This is good.
+# DO NOT PASS SENSITIVE DATA OVER CLEARTEXT TUNNELS.
+tunnels:
+  - name: '*'
+    dn_suffix: '{{ my_httpd_dn_suffix }}'
+    port: '443'
+    proto: 'tls'               

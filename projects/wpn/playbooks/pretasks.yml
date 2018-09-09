@@ -1,0 +1,26 @@
+---
+
+# Make sure we have versionlock
+- name: Packages for yum.
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - yum-plugin-versionlock
+
+# Lock the kernel version to prevent upgrades from breaking guest additions
+- name: Lock kernel version
+  command: yum versionlock kernel
+
+# Some VMs need to know about other VMs
+- name: Copy hosts file
+  copy:
+    src: /vagrant/hosts
+    dest: /etc/hosts
+
+# SELinux is permissive by default in the geerlingguy/centos7 basebox
+# and we want to match our normal config.
+- name: Enable selinux 
+  selinux:
+    state: enforcing
+    policy: targeted
