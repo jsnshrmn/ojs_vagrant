@@ -39,8 +39,8 @@ python -m pip install -r /vagrant/requirements.txt
 # Create the default ansible config folder (pip install doesn't).
 mkdir -pv /etc/ansible
 
-# exit if there is not ansible vault secret.
-stat /vagrant/vault_password.txt &>/dev/null || exit 1
+# create ansible vault secret if one doesn't exist.
+stat /vagrant/vault_password.txt &>/dev/null || bash -c '< /dev/urandom tr -dc "a-zA-Z0-9~!@#$%^&*_-" | head -c${1:-254};echo;' > /vagrant/vault_password.txt
 
 # ansible complains if this file is on the windows share because permissions
 cp /vagrant/ansible.cfg /etc/ansible/ansible.cfg
