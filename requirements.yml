@@ -1,0 +1,84 @@
+---
+
+- src: https://github.com/OULibraries/ansible-role-apache2
+  version: v2016-10-17.0
+  name: OULibraries.apache2
+
+- src: https://github.com/OULibraries/ansible-role-cas
+  version: master
+  name: OULibraries.cas
+
+- src: https://github.com/OULibraries/ansible-role-celery-worker
+  version: master
+  name: OULibraries.celery-worker
+
+- src: https://github.com/OULibraries/ansible-role-centos7
+  version: v2017-06-06.0
+  name: OULibraries.centos7
+
+- src: https://github.com/OULibraries/ansible-role-d7
+  version: v2017-04-28.0
+  name: OULibraries.d7
+
+- src: https://github.com/OULibraries/ansible-role-java
+  version: master
+  name: OULibraries.java
+
+- src: https://github.com/OULibraries/ansible-role-mariadb
+  version: v2016-09-26.0
+  name: OULibraries.mariadb
+
+- src: https://github.com/OULibraries/ansible-role-nginx
+  version: master
+  name: OULibraries.nginx
+
+- src: https://github.com/OULibraries/ansible-role-ngrok
+  version: v2017-01-26.0
+  name: OULibraries.ngrok
+
+- src: https://github.com/OULibraries/ansible-role-ojs
+  version: master
+  name: OULibraries.ojs
+
+- src: https://github.com/OULibraries/ansible-role-postfix-mta
+  version: v2017-04-17.1
+  name: OULibraries.postfix-mta
+
+- src: https://github.com/OULibraries/ansible-role-users
+  version: v2017-05-09.0
+  name: OULibraries.users
+
+- src: https://github.com/geerlingguy/ansible-role-solr
+  version: 3.6.2
+  name: geerlingguy.solr
+
+- src: https://github.com/OULibraries/ansible-role-solr-onesearch
+  version: master
+  name: OULibraries.solr-onesearch
+
+- src: https://github.com/OULibraries/ansible-role-sclphp
+  version: master
+  name: OULibraries.sclphp
+
+- src: https://github.com/OULibraries/ansible-role-searchgateway
+  version: master
+  name: OULibraries.searchgateway
+
+- src: https://github.com/OULibraries/ansible-role-tls-cert
+  version: v2017-07-10.0
+  name: OULibraries.tls-cert
+
+- src: https://github.com/OULibraries/ansible-role-fcrepo3
+  name: OULibraries.fcrepo3
+
+- src: https://github.com/OULibraries/ansible-role-d7-islandora
+  name: OULibraries.d7-islandora
+
+- src: https://github.com/OULibraries/ansible-role-dspace6
+  name: OULibraries.dspace6
+
+- src: https://github.com/OULibraries/ansible-role-postgresql-server
+  name: OULibraries.postgresql-server
+
+- src: https://github.com/jsnshrmn/ansible-role-wpn
+  name: jsnshrmn.wpn
