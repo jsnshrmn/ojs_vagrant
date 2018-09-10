@@ -2,7 +2,7 @@
 - hosts: vagrant
   sudo: yes
   roles:
-    - role: OULibraries.centos7
+    - role: jsnshrmn.centos7
       tags: centos7
   pre_tasks:
     - include: pretasks.yml
@@ -17,8 +17,8 @@
       tags: apache2
     - role: jsnshrmn.wpn
       tags: wpn
-    - role: OULibraries.ngrok
-      tags: ngrok
+#    - role: OULibraries.ngrok
+#      tags: ngrok
 
   pre_tasks:
     - name: /srv is a directory

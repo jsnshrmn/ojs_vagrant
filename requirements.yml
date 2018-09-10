@@ -16,6 +16,10 @@
   version: v2017-06-06.0
   name: OULibraries.centos7
 
+- src: https://github.com/jsnshrmn/ansible-role-centos7
+  version: master
+  name: jsnshrmn.centos7
+
 - src: https://github.com/OULibraries/ansible-role-d7
   version: v2017-04-28.0
   name: OULibraries.d7
