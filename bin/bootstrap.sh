@@ -66,5 +66,5 @@ source /opt/venv/bin/activate
 export PYTHONUNBUFFERED=1
 export ANSIBLE_CONFIG=/etc/ansible/ansible.cfg
 export ANSIBLE_FORCE_COLOR=1
-ansible-playbook --user=vagrant --vault-id /vagrant/bin/vaultpw.sh /vagrant/${1}/playbooks/vagrant.yml
+ansible-playbook --user=vagrant --vault-id /vagrant/bin/vaultpw.sh /vagrant/${1}/playbooks/vagrant.yml --skip-tags 'selinux'
 "
