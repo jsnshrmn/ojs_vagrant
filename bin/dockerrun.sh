@@ -4,7 +4,7 @@ echo "export VISIBLE=now" >> /etc/profile
 
 # Install packages.
 #apt update && apt install -y dialog locales openssh-server python-minimal sudo systemd
-yum install -y dialog iproute locales openssh-clients openssh-server python-minimal sudo systemd
+yum install -y dialog iproute libselinux-python locales openssh-clients openssh-server python-minimal selinux-policy sudo systemd
 
 # Lie if anyone anyone asks if we booted up with systemd.
 # https://www.freedesktop.org/software/systemd/man/sd_booted.html
@@ -51,3 +51,6 @@ chmod 700 /home/vagrant/.ssh
 
 # Setup passwordless sudo for vagrant user.
 echo 'vagrant         ALL = (ALL) NOPASSWD: ALL' >> /etc/sudoers
+
+# Pretend that setenforce 1 is just a reboot away.
+printf 'SELINUX=enforcing\nSELINUXTYPE=targeted\n' > /etc/selinux/config
