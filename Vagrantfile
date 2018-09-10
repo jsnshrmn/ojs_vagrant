@@ -10,6 +10,7 @@ vagrant_project ="projects/wpn"
 # What am I doing?
 vagrant_command = ARGV[0]
 vagrantfile_path = File.dirname(__FILE__)
+vagrant_user = ENV.fetch("OULIB_USER", "vagrant")
 
 # Configure Ansible for specified project
 ansible_cfg =<<CFG 
@@ -33,12 +34,19 @@ Vagrant.configure("2") do |config|
 # Default configuration for all VMs
 config.vm.synced_folder ".", "/vagrant"
 config.ssh.forward_agent = true
-#config.ssh.password = "vagrant"
+config.ssh.password = "vagrant"
 
 config.vm.provider "docker" do |d|
   d.build_dir = "."
   d.has_ssh = true
   d.create_args = ["--cap-add", "SYS_ADMIN", "-v", "/run", "-v", "/tmp", "-v", "/sys/fs/cgroup:/sys/fs/cgroup:ro"]
+end
+
+
+# Use a "real" user for interactive logins
+if  ['ssh', 'scp'].include? vagrant_command
+  # Maybe you want to set this to a real account
+  config.ssh.username = vagrant_user
 end
 
 # Load and build project containers.
