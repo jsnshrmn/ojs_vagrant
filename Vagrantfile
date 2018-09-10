@@ -73,7 +73,8 @@ config.vm.provision "shell",
 config.vm.define "ansible" do |ansible|
     ansible.vm.hostname = "ansible.vagrant.localdomain"
     ansible.vm.provision "shell",
-    inline: "sudo /vagrant/bin/bootstrap.sh #{vagrant_project}",
+    inline: "while [ ! -f /vagrant/bin/bootstrap.sh ]; do sleep 1; done; \
+        sudo /vagrant/bin/bootstrap.sh #{vagrant_project}",
         keep_color: "True"
   end
 end
