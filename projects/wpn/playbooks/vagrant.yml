@@ -28,8 +28,8 @@
         that:
           - mariadb_root_pass is defined
 
-# Got back and configure interactive users and devel settings
+# Go back and configure interactive users and devel settings
 - hosts: vagrant
   roles:
-    - role: OULibraries.users
+    - role: jsnshrmn.users
       tags: users

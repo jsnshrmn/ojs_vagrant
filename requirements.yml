@@ -48,6 +48,10 @@
   version: v2017-05-09.0
   name: OULibraries.users
 
+- src: https://github.com/jsnshrmn/ansible-role-users
+  version: master
+  name: jsnshrmn.users
+
 - src: https://github.com/geerlingguy/ansible-role-solr
   version: 3.6.2
   name: geerlingguy.solr
