@@ -72,7 +72,6 @@ config.vm.provision "shell",
 # Build Ansible control machine and run vagrant playbook
 config.vm.define "ansible" do |ansible|
     ansible.vm.hostname = "ansible.vagrant.localdomain"
-    ansible.vm.network "private_network", ip: "192.168.96.2", :netmask => "255.255.255.0"
     ansible.vm.provision "shell",
     inline: "sudo /vagrant/bin/bootstrap.sh #{vagrant_project}",
         keep_color: "True"
