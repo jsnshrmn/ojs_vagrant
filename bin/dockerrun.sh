@@ -54,3 +54,6 @@ chmod 700 /home/vagrant/.ssh
 
 # Setup passwordless sudo for vagrant user.
 echo 'vagrant         ALL = (ALL) NOPASSWD: ALL' >> /etc/sudoers
+
+# Make sure we can sudo without a tty. Allows Ansible pipelining out of the gate.
+sed -i 's/Defaults requiretty/Defaults !requiretty/' /etc/sudoers

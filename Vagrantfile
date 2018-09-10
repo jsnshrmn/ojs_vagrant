@@ -20,10 +20,11 @@ host_key_checking = False
 log_path = /vagrant/ansible.log
 vault_password_file = /vagrant/bin/vaultpw.sh
 inventory = /vagrant/#{vagrant_project}/inventory.py
-forks = 100
+forks = 1
 timeout = 30
 [ssh_connection]
 scp_if_ssh = True
+pipelining = True
 CFG
 open(vagrantfile_path+'/ansible.cfg', 'w', crlf_newline: false) do |f|
   f.puts ansible_cfg
