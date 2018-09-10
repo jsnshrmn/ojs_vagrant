@@ -10,7 +10,7 @@ ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
 ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key
 
 # Fire up SSH
-/usr/sbin/sshd
+/bin/systemctl start sshd
 
 # Keep our container running.
 trap : TERM INT

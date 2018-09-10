@@ -69,10 +69,6 @@ config.vm.provision "shell",
     keep_color: "True",
     run: "always"
 
-# Kill the SSHD process we used to bootstrap and start a proper service.
-config.vm.provision "shell",
-    inline: "/usr/bin/pkill sshd && /bin/systemctl start sshd"
-
 # Build Ansible control machine and run vagrant playbook
 config.vm.define "ansible" do |ansible|
     ansible.vm.hostname = "ansible.vagrant.localdomain"

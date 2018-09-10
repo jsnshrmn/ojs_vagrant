@@ -34,8 +34,7 @@ python3 -m venv /opt/venv
 source /opt/venv/bin/activate
 python -m pip install --upgrade setuptools
 python -m pip install --upgrade pip
-python -m pip install -r /vagrant/${1}/playbooks/web-monitoring-ansible/requirements.0.txt
-python -m pip install -r /vagrant/${1}/playbooks/web-monitoring-ansible/requirements.1.txt
+python -m pip install -r /vagrant/requirements.txt
 
 # Create the default ansible config folder (pip install doesn't).
 mkdir -pv /etc/ansible
@@ -58,8 +57,7 @@ VAGRANT_REQUIREMENTS='/vagrant/requirements.yml'
 if [ -f "/vagrant/${1}/requirements.yml" ]; then
     VAGRANT_REQUIREMENTS="/vagrant/${1}/requirements.yml"
 fi
-#ansible-galaxy install -r "${VAGRANT_REQUIREMENTS}" --force
-ansible-galaxy install -r /vagrant/${1}/playbooks/web-monitoring-ansible/requirements.yml
+ansible-galaxy install -r "${VAGRANT_REQUIREMENTS}" --force
 
 # run ansible
 sudo -u vagrant bash -c "
@@ -68,5 +66,5 @@ source /opt/venv/bin/activate
 export PYTHONUNBUFFERED=1
 export ANSIBLE_CONFIG=/etc/ansible/ansible.cfg
 export ANSIBLE_FORCE_COLOR=1
-ansible-playbook --user=vagrant --vault-id /vagrant/bin/vaultpw.sh /vagrant/${1}/playbooks/vagrant.yml --skip-tags "web_monitoring_aws"
+ansible-playbook --user=vagrant --vault-id /vagrant/bin/vaultpw.sh /vagrant/${1}/playbooks/vagrant.yml
 "
