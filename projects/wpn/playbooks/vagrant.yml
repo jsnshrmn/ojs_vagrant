@@ -13,8 +13,8 @@
   roles:
     - role: OULibraries.mariadb
       tags: mariadb
-    - role: OULibraries.apache2
-      tags: apache2
+    - role: jsnshrmn.httpd24
+      tags: httpd24
     - role: jsnshrmn.wpn
       tags: wpn
 #    - role: OULibraries.ngrok

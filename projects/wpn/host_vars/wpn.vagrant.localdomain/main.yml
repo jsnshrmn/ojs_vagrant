@@ -1,5 +1,13 @@
 ---
 
+# WordPress version to install
+wpn_version: "4.9"
+
+# Info needed for SCL HTTPD
+httpd_service: 'httpd24-httpd'
+httpd_log_dir: '/opt/rh/httpd24/root/var/log'
+httpd_etc_dir: '/opt/rh/httpd24/root/etc/httpd'
+
 # Passing the local domain on to apache
 httpd_dn_suffix: "wpn.{{ my_httpd_dn_suffix }}"
 

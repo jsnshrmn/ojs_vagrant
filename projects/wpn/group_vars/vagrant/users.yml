@@ -1,4 +1,4 @@
 users:
   - name: '{{my_user}}'
-    groups: 'wheel'
+    groups: 'wheel,apache'
     pubkey: '{{ my_pubkey }}'

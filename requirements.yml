@@ -1,8 +1,12 @@
 ---
 
-- src: https://github.com/OULibraries/ansible-role-apache2
-  version: v2016-10-17.0
-  name: OULibraries.apache2
+- src: https://github.com/jsnshrmn/ansible-role-httpd24
+  version: master
+  name: jsnshrmn.httpd24
+
+- src: https://github.com/jsnshrmn/ansible-role-apache2
+  version: master
+  name: jsnshrmn.apache2
 
 - src: https://github.com/OULibraries/ansible-role-cas
   version: master
@@ -11,10 +15,6 @@
 - src: https://github.com/OULibraries/ansible-role-celery-worker
   version: master
   name: OULibraries.celery-worker
-
-- src: https://github.com/OULibraries/ansible-role-centos7
-  version: v2017-06-06.0
-  name: OULibraries.centos7
 
 - src: https://github.com/jsnshrmn/ansible-role-centos7
   version: master
