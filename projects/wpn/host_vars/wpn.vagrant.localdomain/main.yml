@@ -7,6 +7,7 @@ wpn_version: "4.9"
 httpd_service: 'httpd24-httpd'
 httpd_log_dir: '/opt/rh/httpd24/root/var/log'
 httpd_etc_dir: '/opt/rh/httpd24/root/etc/httpd'
+httpd_share_dir: '/opt/rh/httpd24/root/usr/share/httpd'
 
 # Passing the local domain on to apache
 httpd_dn_suffix: "wpn.{{ my_httpd_dn_suffix }}"
