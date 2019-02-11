@@ -20,7 +20,7 @@ host_key_checking = False
 log_path = /vagrant/ansible.log
 vault_password_file = /vagrant/bin/vaultpw.sh
 inventory = /vagrant/#{vagrant_project}/inventory.py
-forks = 1
+forks = 2
 timeout = 30
 [ssh_connection]
 scp_if_ssh = True
