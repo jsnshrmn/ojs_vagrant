@@ -6,4 +6,4 @@ users:
     groups: 'wheel,apache'
     pubkey: '{{ my_pubkey }}'
 
-users_secure_path: '/opt/wpn/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+users_secure_path: '/opt/ojs/bin:/sbin:/bin:/usr/sbin:/usr/bin'

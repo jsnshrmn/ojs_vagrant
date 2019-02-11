@@ -8,9 +8,9 @@
 # Docker is fast enough that we may be executing before vagrant share is up.
 # Thus the sleep block.
 
-config.vm.define "wpn" do |wpn|
-    wpn.vm.hostname = "wpn.vagrant.localdomain"
-    wpn.vm.provision "shell",
+config.vm.define "ojs" do |ojs|
+    ojs.vm.hostname = "ojs.vagrant.localdomain"
+    ojs.vm.provision "shell",
         inline: "while [ ! -f /vagrant/bin/fix-hosts.sh ]; do sleep 1; done; \
             sudo /vagrant/bin/fix-hosts.sh",
         keep_color: "True",

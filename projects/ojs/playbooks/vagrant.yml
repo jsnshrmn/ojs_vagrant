@@ -8,15 +8,15 @@
     - include: pretasks.yml
       tags: pretasks
 
-- hosts: wpn.vagrant.localdomain
+- hosts: ojs.vagrant.localdomain
   sudo: yes
   roles:
     - role: OULibraries.mariadb
       tags: mariadb
     - role: jsnshrmn.httpd24
       tags: httpd24
-    - role: jsnshrmn.wpn
-      tags: wpn
+    - role: jsnshrmn.ojs
+      tags: ojs
 #    - role: OULibraries.ngrok
 #      tags: ngrok
 
